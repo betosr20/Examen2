@@ -3,6 +3,8 @@ package com.renta.peliculas;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import com.renta.enums.TipoPelicula;
+
 public class Cliente {
 	private String nombre;
 	
@@ -18,29 +20,30 @@ public class Cliente {
         while (iterator.hasNext()) {
             double montoAlquiler = 0;
             Alquiler alquiler = iterator.next();
-
             //determine amounts for each line
-            switch (alquiler.getDisco().getPelicula().getCodigoPrecio()) {
-                case Pelicula.NORMAL:
+            switch (alquiler.getDisco().getPelicula().getTipoPelicula()) {
+
+                case NORMAL:
                     montoAlquiler += 2;
                     if (alquiler.getDiasAlquilado() > 2)
                         montoAlquiler += (alquiler.getDiasAlquilado() - 2) * 1.5;
                     break;
-                case Pelicula.ESTRENO:
+                case ESTRENO:
                     montoAlquiler += alquiler.getDiasAlquilado() * 3;
                     break;
-                case Pelicula.INFANTIL:
+                case INFANTIL:
                     montoAlquiler += 1.5;
                     if (alquiler.getDiasAlquilado() > 3)
                         montoAlquiler += (alquiler.getDiasAlquilado() - 3) * 1.5;
                     break;
+                default: montoAlquiler=0;
 
             }
             montoTotal += montoAlquiler;
 
             puntosAlquilerFrecuente ++;
             // agregar bono por alquiler de pelicula "estreno"
-            if ((alquiler.getDisco().getPelicula().getCodigoPrecio() == Pelicula.ESTRENO) && alquiler.getDiasAlquilado() > 1) puntosAlquilerFrecuente ++;
+            if ((alquiler.getDisco().getPelicula().getTipoPelicula() == TipoPelicula.ESTRENO) && alquiler.getDiasAlquilado() > 1) puntosAlquilerFrecuente ++;
 
             //mostrar datos
             result += "\t" + alquiler.getDisco().getPelicula().getNombre()+ "\t" + String.valueOf(montoAlquiler) + "\n";

@@ -1,20 +1,23 @@
 package com.renta.peliculas;
 
+import com.renta.enums.TipoPelicula;
+
 public class Pelicula {
-		public static final int  INFANTIL = 2;
-	    public static final int  NORMAL = 0;
-	    public static final int  ESTRENO = 1;
-
+		
+		private TipoPelicula tipoPelicula;
 	    private String nombre; 
-		private int codigoPrecio;
 
-		public Pelicula(String pNombre, int pCodigoPrecio) {
+		public Pelicula(String pNombre, TipoPelicula ptipoPelicula) {
 			setNombre(pNombre);
-			codigoPrecio = pCodigoPrecio;
+			tipoPelicula = ptipoPelicula;
 		}
 
-		public int getCodigoPrecio() {
-			return codigoPrecio;
+		public void setTipoPelicula(TipoPelicula ptipo) {
+			tipoPelicula=ptipo;
+		}
+		
+		public TipoPelicula getTipoPelicula() {
+			return tipoPelicula;
 		}
 
 		public void persist() {

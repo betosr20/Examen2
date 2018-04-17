@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import com.renta.enums.TipoPelicula;
 import com.renta.peliculas.Alquiler;
 import com.renta.peliculas.Cliente;
 import com.renta.peliculas.Disco;
@@ -21,7 +22,7 @@ class pruebaCliente {
 	@Test
 	void testResultado() {
 		Cliente cliente = new Cliente("Shirley");
-		Pelicula pelicula = new Pelicula("Ready player one", 1);
+		Pelicula pelicula = new Pelicula("Ready player one", TipoPelicula.ESTRENO);
 		Disco disco = new Disco ("L1", pelicula);
 		Alquiler alquiler = new Alquiler(disco, 2);
 		cliente.addRental(alquiler);
