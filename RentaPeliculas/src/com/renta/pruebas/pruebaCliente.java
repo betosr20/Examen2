@@ -32,5 +32,5 @@ class pruebaCliente {
 		testString += "Gano " + "2" + " puntos por alquiler frecuente";
 		assertEquals(testString, cliente.statement());
 	}
-
+		
 }
