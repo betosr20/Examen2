@@ -63,6 +63,10 @@ public class Cliente {
     public void addRental(Alquiler arg) {
     	alquileres.add(arg);
     }
+    
+    public void removeRental(Alquiler arg) {
+    	alquileres.remove(arg);
+    }
     public static Cliente get(String name) {
     	return (Cliente) Registrar.get("Clientes", name);
     }
