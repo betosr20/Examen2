@@ -59,7 +59,6 @@ public class Cliente {
 		return nombre;
 	}
     
-    
     public void addRental(Alquiler arg) {
     	alquileres.add(arg);
     }
@@ -73,5 +72,6 @@ public class Cliente {
     public void persist() {
     	Registrar.add("Clientes", this);
     }
+    
     private ArrayList<Alquiler> alquileres= new ArrayList<>();
 }
