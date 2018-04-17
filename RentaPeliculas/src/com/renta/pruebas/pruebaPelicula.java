@@ -10,9 +10,9 @@ class pruebaPelicula {
 
 	@Test
 	void test1() {
-		Pelicula peli = new Pelicula("Star Wars: A new hope", 0);
+		Pelicula peli = new Pelicula("Star Wars: The empire strikes back", 0);
 		peli.persist();
-		assertEquals(peli, Pelicula.get("Star Wars: A new hope"));
+		assertEquals(peli, Pelicula.get("Star Wars: The empire strikes back"));
 		
 	}
 

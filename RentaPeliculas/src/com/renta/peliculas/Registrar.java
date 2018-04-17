@@ -18,9 +18,9 @@ public class Registrar {
 		if ("Peliculas".equals(coleccion)){
 			Pelicula nuevaPelicula = (Pelicula) objeto;
 			Peliculas.put(nuevaPelicula.getNombre(), nuevaPelicula);
-		}
+		}else {
 		Cliente nuevoCliente = (Cliente) objeto;
 		Clientes.put(nuevoCliente.getNombre(), nuevoCliente);
-	}
-
+		}
+	}	
 }
