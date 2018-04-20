@@ -10,6 +10,8 @@ import com.renta.peliculas.Cliente;
 import com.renta.peliculas.Disco;
 import com.renta.peliculas.Pelicula;
 
+import Fabricas.FabricaAlquiler;
+
 class pruebaCliente {
 
 	@Test
@@ -24,7 +26,7 @@ class pruebaCliente {
 		Cliente cliente = new Cliente("Shirley");
 		Pelicula pelicula = new Pelicula("Ready player one", TipoPelicula.ESTRENO);
 		Disco disco = new Disco ("L1", pelicula);
-		Alquiler alquiler = new Alquiler(disco, 2);
+		Alquiler alquiler = FabricaAlquiler.getAlquiler(disco, 2);
 		cliente.addRental(alquiler);
 		String testString;
 		testString ="Alquileres de " + "Shirley" + ":\n";

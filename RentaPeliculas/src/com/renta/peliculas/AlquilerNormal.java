@@ -1,7 +1,5 @@
 package com.renta.peliculas;
 
-import Interfaces.Calcular;
-
 public class AlquilerNormal extends Alquiler{
 
 	public AlquilerNormal(Disco pDisco, int pDiasAlquilado) {
