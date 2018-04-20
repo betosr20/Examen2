@@ -1,6 +1,6 @@
 package com.renta.peliculas;
 
-public class Alquiler {
+public abstract class Alquiler{
     private Disco disco;
     private int diasAlquilado;
 	
@@ -16,5 +16,5 @@ public class Alquiler {
     	diasAlquilado = pDiasAlquilado;
     }
     
-
+    public abstract double calcularPrecio();
 }
